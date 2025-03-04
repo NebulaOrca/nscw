@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Jadwal TV",
+    "description": "HTTPS",
+    "creator": "Yosh",
+    "code": "const got = require('got')\nconst cheerio = require('cheerio')\nconst fs = require('fs')\n\nconst PATH = './jadwal-sholat.json'\n\nasync function getCitySelectOption() {\n    const html = await got('https://jadwalsholat.org/jadwal-sholat/monthly.php').text()\n    const $ = cheerio.load(html)\n\n    return $('.inputcity > option').map(function () {\n        const $option = $(this)\n        let kota = $option.text().trim().toLowerCase()\n        if (kota.includes(',')) [kota, _] = kota.split(',')\n\n        return {\n            kota,\n            value: $option.attr('value').trim()\n        }\n    }).toArray()\n}\n\nfunction writeData(data) {\n    const json = JSON.stringify(\n        data.sort((a, b) => a.value - b.value),\n        null, 4)\n    return fs.promises.writeFile(PATH, json)\n}\n\ngetCitySelectOption().then(writeData)",
+    "creatorUrl": "https://github.com/BochilTeam/scraper/blob/master/data/jadwal-sholat.js"
+  }
+]

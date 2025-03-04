@@ -1,0 +1,19 @@
+[
+  {
+    "name": "SataruZ RPG",
+    "description": "Bot RPG",
+    "creator": "Yosh",
+    "imageUrl": "https://pomf2.lain.la/f/kj24j9ji.jpeg",
+    "buttonType": "download",
+    "buttonUrl": "https://pomf2.lain.la/f/kj24j9ji.jpeg"
+  },
+  {
+    "name": "TestBOT",
+    "description": "TestBOT",
+    "creator": "TestBOT",
+    "imageUrl": "https://pomf2.lain.la/f/660knhd5.jpg",
+    "buttonType": "buy",
+    "buttonUrl": "https://pomf2.lain.la/f/660knhd5.jpg",
+    "id": "ab7e1a36-b9cd-48bf-af7a-fc5db5af2ac4"
+  }
+]
